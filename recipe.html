@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Page</title>
+    <link rel="stylesheet" href="recipe.css" type="text/css" />
+    <style>
+      * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+        font-family: outfit;
+      }
+
+      :root {
+        --nutmeg: hsl(14, 45%, 36%);
+        --dark-respberry: hsl(332, 51%, 32%);
+        --white: hsl(0, 0%, 100%);
+        --rose-white: hsl(330, 100%, 98%);
+        --eggshell: hsl(30, 54%, 90%);
+        --light-grey: hsl(30, 18%, 87%);
+        --wenge-brown: hsl(30, 10%, 34%);
+        --dark-charcoal: hsl(24, 5%, 18%);
+      }
+
+      body {
+        background-color: var(--eggshell);
+        color: var(--wenge-brown);
+        min-height: 100vh;
+        font-family: "outfil", "young-serif";
+        line-height: 1.4;
+        display: grid;
+        place-content: center;
+        font-size: 15px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      h1,
+      h2 {
+        font-family: "youngserif", "outfit";
+        font-weight: 400;
+      }
+
+      h1 {
+        color: var(--dark-charcoal);
+        font-size: 2.8rem;
+      }
+      h2 {
+        color: var(--nutmeg);
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 15px;
+      }
+      .recipe-step {
+        margin: 1.5rem 0;
+      }
+      .nutrition-step {
+        margin-top: 1rem;
+      }
+      ul {
+        padding-left: 1.25rem;
+      }
+      ul li::marker {
+        columns: var(--nutmeg);
+        font-weight: bold;
+      }
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+      ul li span {
+        color: var(--wenge-brown);
+        margin-left: 1rem;
+        font-weight: 700;
+      }
+      hr {
+        margin: 1.5rem 0;
+        border: 1px solid var(--light-grey);
+      }
+      .container {
+        max-width: 800px;
+        display: inline-block;
+        background-color: var(--white);
+        margin: 2rem;
+        border-radius: 1rem;
+        padding: 16px;
+      }
+      .container .recipe-img {
+        padding: 2rem;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .text-section {
+        margin-bottom: 8px;
+      }
+      img {
+        border-radius: 8px;
+      }
+      .recipe-information {
+        padding: 0rem 2rem 2rem 2rem;
+      }
+      .item {
+        display: flex;
+        align-items: start;
+        gap: 8px;
+      }
+      .description {
+        margin: 1.5rem 0;
+      }
+      .recipe-prep-time {
+        background-color: var(--rose-white);
+        padding: 1.25rem;
+        border-radius: 1rem;
+      }
+      .recipe-prep-time h3 {
+        color: var(--dark-respberry);
+        margin: 0.75rem;
+      }
+      .recipe-prep-time ul li::marker {
+        color: var(--dark-respberry);
+      }
+      .ingredients li {
+        margin-bottom: 0.5rem;
+      }
+      .ingredients li span {
+        font-weight: initial;
+      }
+      .Instruction .item {
+        padding-left: 0.5rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+      }
+      .Instruction .item .num {
+        color: var(--nutmeg);
+        margin-right: 1rem;
+        font-weight: 700;
+      }
+      .Instruction .item p span {
+        font-weight: 700;
+      }
+      .nutrition-step .value {
+        margin-bottom: 1rem;
+      }
+      .nutrition-table .item {
+        padding: 0.75rem 2rem;
+        display: flex;
+        transition: all 200ms ease;
+        border: 1px solid var(--light-grey);
+      }
+      .nutrition-table .item:last-child {
+        border-bottom: 0;
+      }
+      .nutrition-table .item:nth-child(2) {
+        color: var(--nutmeg);
+        font-weight: 700;
+      }
+      .nutrition-table .item > * {
+        width: 100px;
+        margin-right: auto;
+      }
+      table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: none; /* Remove border */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: none; /* Remove border */
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        td {
+            color: #333;
+        }
+      @media (max-width: 540px) {
+        h1 {
+          margin-top: 2rem;
+        }
+        .container {
+          margin: 0;
+        }
+        .container .recipe-img {
+          padding: 0;
+          border-radius: 0;
+        }
+        .container .recipe-img img {
+          border-radius: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="recipe-image">
+          <img
+            src="C:\Users\hp\AppData\Local\Temp\Rar$DIa12644.12028\image-omelette.jpeg"
+            alt=""
+          />
+        </div>
+        <div class="text-section">
+          <h1>Simple Omelette Recipe</h1>
+          <p>
+            An easy and qiuck dish,perfect for any meal.This classic omelette
+            combines beatens egg cooked to perfection, optionally filled with
+            your choice of cheese, vegetables, or meats.
+          </p>
+        </div>
+        <div class="recipe-prep-time">
+          <h3>Preparation Time</h3>
+          <ul>
+            <li><span>Total</span>: Aproximately 10 minuts</li>
+            <li><span>Preparation</span>: 5 minuts</li>
+            <li><span>cooking</span>: 5 minuts</li>
+          </ul>
+        </div>
+        <div class="recipe-step">
+          <h2>Ingredients</h2>
+          <ul class="ingredin">
+            <li><spane>2-3 large eggs</spane></li>
+            <li><spane>salt,to taste</spane></li>
+            <li><spane>pepper,to taste</spane></li>
+            <li><spane>1 tablespoon of butter or oil</spane></li>
+            <li>
+              <spane
+                >optional fillings:cheese,decided vegetables,herbs,cooked
+                meats</spane
+              >
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="recipe-step">
+          <h2>Instructions</h2>
+          <div class="instruction">
+            <div class="item">
+              <div class="num">1.</div>
+              <p>
+                <span>Beat the eggs:</span>In bowl,beat the egg with pinch of
+                saltand pepper until theyare well mixed. You can add
+                tablespoonof water and milk for a fluffier texture.
+              </p>
+            </div>
+            <div class="item">
+              <div class="num">2.</div>
+              <p>
+                <span>Heat the pan:</span>Place a non-stick frying pan over
+                medium heat and add butter or oil.
+              </p>
+            </div>
+            <div class="item">
+              <div class="num">3.</div>
+              <p>
+                <span>Cook the Omelette:</span>Once the butter is melting and
+                bubbling,pour n the egg.Tilt the panto ensure the eggs
+                evenlycoat the surface.
+              </p>
+            </div>
+            <div class="item">
+              <div class="num">4.</div>
+              <p>
+                <span>Add Filling (optional):</span>When the eggs begin to set
+                at the edges but are still slightly runny in the middle,
+                sprinkle your chosen fillings over one half of the omelette.
+              </p>
+            </div>
+            <div class="item">
+              <div class="num">5.</div>
+              <p>
+                <span>Fold and Serve:</span>As the omelette to continues to
+                Cook,carefully lift one edge and fold it over the filling.Let it
+                cook for another minut, then slide it on plate.
+              </p>
+            </div>
+            <div class="item">
+              <div class="num">6.</div>
+              <p>
+                <span>Enjoy:</span>Serve hot and additonal salt and pepper if
+                need.
+              </p>
+            </div>
+          </div>
+        </div>
+       
+        
+            <div class="recipe-step">
+              <hr>
+            <h2>Nutrition</h2>
+            <p class ="values">The table shows nutritional values per serving without the additional fillings</p>
+            <div class="recipe-table">
+              <div class="item">
+                <table>
+                  <tr>
+                      <th>Category</th>
+                      <th>Amount</th>
+                  </tr>
+                  <tr>
+                      <td>Calories</td>
+                      <td>277 kcal</td>
+                  </tr>
+                  <tr>
+                      <td>Carbs</td>
+                      <td>0 g</td>
+                  </tr>
+                  <tr>
+                      <td>Protein</td>
+                      <td>20 g</td>
+                  </tr>
+                  <tr>
+                      <td>Fat</td>
+                      <td>22 g</td>
+                  </tr>
+              </table>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
